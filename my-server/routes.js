@@ -15,7 +15,7 @@ module.exports = function(app) {
     
     app.route("/todo")
     .get(async(req, res) => {
-      const result = await client.db("xxx").collection("todoItems").find({}).sort({ _id: -1 }).toArray();  
+      const result = await client.db("db").collection("todoItems").find({}).sort({ _id: -1 }).toArray();  
       res.send(result)
     })
     .post(async(req, res) => {
